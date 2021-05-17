@@ -1,0 +1,19 @@
+name: Build and Upload Archive
+on:  
+  push:
+    tags:
+      - '*'
+jobs:
+  build-and-upload-archive:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Archive
+      run: zip -r ${{ github.event.repository.name }}.zip . -x "*.git*" -x "*.vscode*"
+    - name: Upload Release
+      uses: ncipollo/release-action@v1
+      with:
+          artifacts: ${{ github.event.repository.name }}.zip
+          token: ${{ secrets.GITHUB_TOKEN }}
+          allowUpdates: true
+          replacesArtifacts: true

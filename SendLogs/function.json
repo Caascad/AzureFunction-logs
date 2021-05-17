@@ -5,8 +5,8 @@
       "type": "eventHubTrigger",
       "name": "events",
       "direction": "in",
-      "eventHubName": "%eventHubName%",
-      "connection": "connection",
+      "eventHubName": "%EventHubName%",
+      "connection": "EventHubConnection",
       "cardinality": "many",
       "consumerGroup": "$Default",
       "dataType": "binary"
