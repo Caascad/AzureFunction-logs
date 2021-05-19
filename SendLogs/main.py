@@ -10,4 +10,4 @@ def main(events: List[func.EventHubEvent]):
         evt = json.loads(event
         .get_body().decode('utf-8'))
         for record in evt['records']:
-            logging.info(record['properties']['log'])
+            logging.info(':'+record['properties']['log'])
