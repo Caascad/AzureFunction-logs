@@ -16,8 +16,8 @@
     "eventHubs": {
       "batchCheckpointFrequency": 5,
       "eventProcessorOptions": {
-        "maxBatchSize": 256,
-        "prefetchCount": 512
+        "maxBatchSize": 64,
+        "prefetchCount": 128
       },
       "initialOffsetOptions": {
         "type": "fromStart",

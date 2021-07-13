@@ -14,7 +14,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+lib/*
 lib64/
 parts/
 sdist/
@@ -128,3 +128,6 @@ obj
 appsettings.json
 local.settings.json
 .python_packages
+
+# Exceptions
+!lib/__init__.py

@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: pip install -t ./.python_packages/lib/site-packages -r requirements.txt
     - name: Build Archive
       run: zip -r ${{ github.event.repository.name }}.zip . -x "*.git*" -x "*.vscode*"
     - name: Upload Release
